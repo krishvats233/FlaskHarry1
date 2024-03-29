@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}
+    Mahadev
+{% endblock title %}
+
+{% block body %}
+  
+
+      <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <form action="/add" method="post">
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control" id="exampleInputPassword1">
+                      </div>
+
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+            {{users}}
+            {% for i in users %}
+            <!--loop.index ki value start from 1-->
+        <div>
+         {{i.id}}   {{i}} <!--kis bhi varibale aur kisi ko bhi double curly brackets mai rakhega-->
+        </div>
+            {% endfor %}
+
+        </div>
+
+      </div>
+    {% endblock body %}
